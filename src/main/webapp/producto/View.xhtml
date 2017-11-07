@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProductoViewDlg" widgetVar="ProductoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProductoTitle}">
+            <h:form id="ProductoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{productoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProductoLabel_id}"/>
+                        <h:outputText value="#{productoController.selected.id}" title="#{bundle.ViewProductoTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_descripcion}"/>
+                        <h:outputText value="#{productoController.selected.descripcion}" title="#{bundle.ViewProductoTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_estado}"/>
+                        <h:outputText value="#{productoController.selected.estado}" title="#{bundle.ViewProductoTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_nombre}"/>
+                        <h:outputText value="#{productoController.selected.nombre}" title="#{bundle.ViewProductoTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_promedioCalificacion}"/>
+                        <h:outputText value="#{productoController.selected.promedioCalificacion}" title="#{bundle.ViewProductoTitle_promedioCalificacion}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_valor}"/>
+                        <h:outputText value="#{productoController.selected.valor}" title="#{bundle.ViewProductoTitle_valor}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_productoId}"/>
+                        <h:outputText value="#{productoController.selected.productoId}" title="#{bundle.ViewProductoTitle_productoId}"/>
+                        <h:outputText value="#{bundle.ViewProductoLabel_proveedorId}"/>
+                        <h:outputText value="#{productoController.selected.proveedorId}" title="#{bundle.ViewProductoTitle_proveedorId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProductoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
